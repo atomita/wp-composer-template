@@ -1,0 +1,33 @@
+{
+	"name": "atomita/wp-composer-template",
+	"authors": [
+		{
+			"name": "atomita"
+		}
+	],
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "wordpress",
+				"type": "webroot",
+				"version": "3.8",
+				"dist": {
+					
+					"type": "zip",
+					"url": "https://github.com/WordPress/WordPress/archive/3.8.zip"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"wordpress": "3.8",
+		"fancyguy/webroot-installer": "1.0.0",
+		"atomita/wp-environment-config": "dev-master"
+	},
+	"extra": {
+		"webroot-dir": "html/wp",
+		"webroot-package": "wordpress"
+	}
+}
