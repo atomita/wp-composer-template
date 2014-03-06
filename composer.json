@@ -13,7 +13,7 @@
 				"type": "webroot",
 				"dist": {
 					"type": "zip",
-					"url": "http://wordpress.org/wordpress-3.8.1.zip"
+					"url": "http://ja.wordpress.org/wordpress-3.8.1-ja.zip"
 				}
 			}
 		},
