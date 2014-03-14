@@ -6,7 +6,7 @@ This is the template for downloading wordpress in Composer.
 ## Get started
 
 ```shell
-$ wget https://raw.github.com/atomita/wp-composer-template/master/composer.json
+$ wget https://raw.github.com/atomita/wp-composer-template/ja/composer.json
 $ composer install
 ```
 
