@@ -6,10 +6,10 @@ This is the template for downloading wordpress in Composer.
 ## Get started
 
 ```shell
-$ wget https://raw.github.com/atomita/wp-composer-template/ja/composer.json
+$ wget https://raw.github.com/atomita/wordpress-composer-template/ja/composer.json
 $ composer install
 ```
 
 ## Note
 
-You can not use the "wp-admin/setup-config.php" in the deed of [wp-environment-config](https://github.com/atomita/wp-environment-config).
+You can not use the "wp-admin/setup-config.php" in the deed of [wordpress-environment-config](https://github.com/atomita/wordpress-environment-config).
