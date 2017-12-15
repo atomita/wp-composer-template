@@ -1,39 +1,43 @@
 {
-	"name": "atomita/wordpress-composer-template",
-	"authors": [
-		{
-			"name": "atomita"
-		}
-	],
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "wordpress", "version": "3.8.1",
-				"type": "webroot",
-				"dist": {
-					"type": "zip",
-					"url": "http://wordpress.org/wordpress-3.8.1.zip"
-				}
-			}
-		},
-		{
-			"type": "composer",
-			"url": "http://wpackagist.org"
-		}
-	],
-	"require": {
-		"php": ">=5.3.0",
-		"wordpress": "3.8.1",
-		"fancyguy/webroot-installer": "1.0.0",
-		"atomita/wordpress-environment-config": "dev-master",
-		"wpackagist/advanced-custom-fields": "*"
-	},
-	"extra": {
-		"webroot-dir": "html/wp",
-		"webroot-package": "wordpress",
-		"installer-paths": {
-			"html/wp/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
-		}
-	}
+    "name": "atomita/wp-composer-template",
+    "authors": [
+        {
+            "name": "atomita"
+        }
+    ],
+    "scripts": {
+        "update-repositories-for-wordpress": [
+            "@php -r \"\\$c=json_decode(file_get_contents('composer.json'),true);\\$t=json_decode(file_get_contents('https://api.github.com/repos/WordPress/WordPress/tags?per_page=100',false,stream_context_create(['http'=>['ignore_errors'=>true,'header'=>'User-Agent: wp-composer-template']])),true);\\$c['repositories']=array_merge(array_filter(\\$c['repositories'],function(\\$r){return !(isset(\\$r['type'])&&\\$r['type']=='package'&&isset(\\$r['package'])&&isset(\\$r['package']['name'])&&\\$r['package']['name']=='wordpress');}),array(array('type'=>'package','package'=>array('name'=>'wordpress','version'=>'dev-master','source'=>array('type'=>'git','url'=>'https://github.com/WordPress/WordPress.git','reference'=>'master')))),array_map(function(\\$t){return array('type'=>'package','package'=>array('name'=>'wordpress','version'=>\\$t['name'],'source'=>array('type'=>'git','url'=>'https://github.com/WordPress/WordPress.git','reference'=>\\$t['name'])));},array_merge(array_filter(\\$t,function(\\$t){return preg_match('#\\\\A\\\\d+(\\\\.\\\\d+)*\\\\z#',\\$t['name']);}))));file_put_contents('composer.json',json_encode(\\$c,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));\""
+        ]
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "wordpress": "4.*"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress",
+                "version": "dev-master",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/WordPress/WordPress.git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress",
+                "version": "4.9.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/WordPress/WordPress.git",
+                    "reference": "4.9.1"
+                }
+            }
+        }
+    ]
 }
