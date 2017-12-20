@@ -11,33 +11,6 @@
         ]
     },
     "require": {
-        "php": ">=5.3.0",
-        "wordpress": "4.*"
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "wordpress",
-                "version": "dev-master",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/WordPress/WordPress.git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "wordpress",
-                "version": "4.9.1",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/WordPress/WordPress.git",
-                    "reference": "4.9.1"
-                }
-            }
-        }
-    ]
+        "php": ">=5.3.0"
+    }
 }
