@@ -8,5 +8,6 @@ This is the template for downloading wordpress in Composer.
 ```shell
 wget https://raw.github.com/atomita/wordpress-composer-template/master/composer.json
 wget https://raw.github.com/atomita/wordpress-composer-template/master/env-example -O .env
+composer run-script update-repositories-for-wordpress
 composer require wordpress
 ```
